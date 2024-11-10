@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Reset from "./Reset";
 
 function Signin(prop) {
-  const backendURL = "http://localhost:3000";
+  const backendURL = "https://backend-k9bc.onrender.com";
   const navigate = useNavigate();
   const [data, setData] = useState({ email: "", password: "" }); // Initialize with empty strings
   const [showReset, setShowReset] = useState(false);

@@ -36,7 +36,7 @@ import LeftPanel from "./LeftPanel";
 import Error from "./Error";
 
 function VideoSection() {
-  const backendURL = "http://localhost:3000";
+  const backendURL = "https://backend-k9bc.onrender.com";
   const { id } = useParams();
   const [videoData, setVideoData] = useState(null);
   const [email, setEmail] = useState();
@@ -270,7 +270,7 @@ function VideoSection() {
           await response.json();
         }
       } catch (error) {
-        //console.log(error.message);
+        console.log(error.message);
       }
     };
     PushTrending();
@@ -287,7 +287,7 @@ function VideoSection() {
           setVideoData(video);
         }
       } catch (error) {
-        //console.log(error.message);
+        console.log(error.message);
       }
     };
 
@@ -297,9 +297,12 @@ function VideoSection() {
   useEffect(() => {
     const getVideos = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:3000/getvideos"
-        );
+        const response = await fetch(`${backendURL}/getvideos`);
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const {
           thumbnailURLs,
           titles,
@@ -309,6 +312,7 @@ function VideoSection() {
           views,
           uploadDate,
         } = await response.json();
+
         setThumbnails(thumbnailURLs);
         setTitles(titles);
         setUploader(Uploader);
@@ -317,12 +321,13 @@ function VideoSection() {
         SetViews(views);
         setPublishDate(uploadDate);
       } catch (error) {
-        //console.log(error.message);
+        console.log('Error fetching videos:', error.message);
       }
     };
 
     getVideos();
   }, []);
+
 
   useEffect(() => {
     const initializePlyr = () => {

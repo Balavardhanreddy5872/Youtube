@@ -5,7 +5,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 function ChannelVideos(prop) {
-  const backendURL = "http://localhost:3000"
+  const backendURL = "https://backend-k9bc.onrender.com"
   const [myVideos, setMyVideos] = useState([]);
   const [Email, setEmail] = useState();
   const [videosort, setVideoSort] = useState();
