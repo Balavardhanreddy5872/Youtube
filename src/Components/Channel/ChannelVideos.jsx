@@ -288,6 +288,7 @@ function ChannelVideos(prop) {
                       updateViews(element._id);
                       setTimeout(() => {
                         navigate(`/video/${element._id}`);
+                        navigate('/')
                       }, 400);
                     } else {
                       navigate(`/video/${element._id}`);
