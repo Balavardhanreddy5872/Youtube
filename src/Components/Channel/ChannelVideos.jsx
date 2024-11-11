@@ -288,11 +288,9 @@ function ChannelVideos(prop) {
                       updateViews(element._id);
                       setTimeout(() => {
                         navigate(`/video/${element._id}`);
-                        window.location.reload();
                       }, 400);
                     } else {
                       navigate(`/video/${element._id}`);
-                      window.location.reload();
                     }
                   }}
                 >

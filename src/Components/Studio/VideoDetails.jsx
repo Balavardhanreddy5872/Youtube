@@ -244,7 +244,6 @@ function VideoDetails() {
         "Changes you made may not be saved. Do you want to continue?"
       );
       if (userConfirmation) {
-        window.location.reload();
       } else {
         // User clicked on "Cancel", do nothing
       }
@@ -316,7 +315,6 @@ function VideoDetails() {
       const Data = await response.json();
       if (Data) {
         setLoading(false);
-        window.location.reload();
       }
     } catch (error) {
       // console.log(error);

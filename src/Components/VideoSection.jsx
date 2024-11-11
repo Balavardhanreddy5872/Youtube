@@ -827,7 +827,7 @@ function VideoSection() {
         setCommentOpacity(1);
         CommentDeleteNotify();
       }
-      // window.location.reload();
+      // 
     } catch (error) {
       //console.log(error.message);
     }
@@ -964,7 +964,7 @@ function VideoSection() {
         if (Data) {
           setLoading(false);
           playlistNotify();
-          window.location.reload();
+          
         }
       }
     } catch (error) {

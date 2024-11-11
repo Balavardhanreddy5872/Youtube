@@ -505,7 +505,6 @@ function ChannelHome(prop) {
               className="see-all2"
               onClick={() => {
                 localStorage.setItem("Section", "Videos");
-                window.location.reload();
               }}
             >
               See all
@@ -739,7 +738,6 @@ function ChannelHome(prop) {
               className="see-all2"
               onClick={() => {
                 localStorage.setItem("Section", "Videos");
-                window.location.reload();
               }}
             >
               See all
@@ -1353,7 +1351,6 @@ function ChannelHome(prop) {
                 className="see-all2"
                 onClick={() => {
                   localStorage.setItem("Section", "Videos");
-                  window.location.reload();
                 }}
               >
                 See all
@@ -1507,7 +1504,6 @@ function ChannelHome(prop) {
                 className="see-all2"
                 onClick={() => {
                   localStorage.setItem("Section", "Videos");
-                  window.location.reload();
                 }}
               >
                 See all

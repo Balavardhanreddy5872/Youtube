@@ -75,7 +75,7 @@ function Signup() {
         SignupNotify();
         localStorage.setItem("userToken", token);
         setTimeout(() => {
-          window.location.reload();
+          
           document.body.classList.remove("bg-class");
         }, 2000);
       }

@@ -218,7 +218,6 @@ function Basic() {
           setLoading(false);
           setBasicChanges(false);
           setLinkChanges(false);
-          window.location.reload();
         }, 3800);
       }
     };

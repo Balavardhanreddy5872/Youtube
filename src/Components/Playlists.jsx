@@ -527,7 +527,7 @@ function Playlists() {
                           saveEditData();
 
                           setTimeout(() => {
-                            window.location.reload();
+                            
                           }, 300);
                         }}
                       >
@@ -603,7 +603,7 @@ function Playlists() {
                             setprivacyClicked(false);
                             setPrivacy("Public");
                             setTimeout(() => {
-                              window.location.reload();
+                              
                             }, 200);
                           }}
                         >
@@ -628,7 +628,7 @@ function Playlists() {
                             setprivacyClicked(false);
                             setPrivacy("Private");
                             setTimeout(() => {
-                              window.location.reload();
+                              
                             }, 200);
                           }}
                         >
@@ -1038,7 +1038,7 @@ function Playlists() {
                             saveEditData();
 
                             setTimeout(() => {
-                              window.location.reload();
+                              
                             }, 300);
                           }}
                         >
@@ -1115,7 +1115,7 @@ function Playlists() {
                               setprivacyClicked(false);
                               setPrivacy("Public");
                               setTimeout(() => {
-                                window.location.reload();
+                                
                               }, 200);
                             }}
                           >
@@ -1140,7 +1140,7 @@ function Playlists() {
                               setprivacyClicked(false);
                               setPrivacy("Private");
                               setTimeout(() => {
-                                window.location.reload();
+                                
                               }, 200);
                             }}
                           >

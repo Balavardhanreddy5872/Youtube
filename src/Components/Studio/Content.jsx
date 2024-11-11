@@ -850,7 +850,7 @@ function Content() {
                 if (boxclicked === true && DeleteVideoData) {
                   DeleteVideo(DeleteVideoData._id);
                   setTimeout(() => {
-                    window.location.reload();
+
                   }, 300);
                 }
               }}

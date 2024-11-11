@@ -438,7 +438,7 @@ function Studio() {
       const { message } = await response.json();
       if (message === "Channel saved successfully") {
         setisChannel(true);
-        window.location.reload();
+        
       }
     } catch (error) {
       // console.log(error.message);
@@ -579,7 +579,7 @@ function Studio() {
           setIsPublished(true);
           setLoading(false);
           setIsClicked(false);
-          window.location.reload();
+          
         } else {
           setLoading(true);
           setIsClicked(true);
@@ -902,12 +902,12 @@ function Studio() {
                   cancelVideoUpload();
                   CancelNotify();
                   setTimeout(() => {
-                    window.location.reload();
+                    
                   }, 1000);
                 } else if (Progress === 100 && isPublished === false) {
                   CancelNotify();
                   setTimeout(() => {
-                    window.location.reload();
+                    
                   }, 1000);
                 }
                 if (isClicked === true) {

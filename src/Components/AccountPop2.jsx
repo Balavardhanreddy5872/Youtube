@@ -229,7 +229,7 @@ function AccountPop() {
               className={theme ? "dark-theme" : "dark-theme preview-lightt"}
               onClick={() => {
                 setTheme(true);
-                window.location.reload();
+                
               }}
             >
               <DoneOutlinedIcon
@@ -243,7 +243,7 @@ function AccountPop() {
               className={theme ? "light-theme" : "light-theme preview-lightt"}
               onClick={() => {
                 setTheme(false);
-                window.location.reload();
+                
               }}
             >
               <DoneOutlinedIcon

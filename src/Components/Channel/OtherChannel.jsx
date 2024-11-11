@@ -416,7 +416,7 @@ function OtherChannel() {
                     }
                     onClick={() => {
                       localStorage.setItem("Section", "About");
-                      window.location.reload();
+                      
                     }}
                   >
                     <p className="more-text">More about this channel</p>
@@ -525,7 +525,7 @@ function OtherChannel() {
                   className={theme ? "channel-home1" : "channel-home2"}
                   onClick={() => {
                     localStorage.setItem("Section", "Home");
-                    window.location.reload();
+                    
                   }}
                 >
                   HOME
@@ -537,7 +537,7 @@ function OtherChannel() {
                   }
                   onClick={() => {
                     localStorage.setItem("Section", "Home");
-                    window.location.reload();
+                    
                   }}
                 >
                   HOME
@@ -553,7 +553,7 @@ function OtherChannel() {
                   }
                   onClick={() => {
                     localStorage.setItem("Section", "Videos");
-                    window.location.reload();
+                    
                   }}
                 >
                   VIDEOS
@@ -570,7 +570,7 @@ function OtherChannel() {
                   }
                   onClick={() => {
                     localStorage.setItem("Section", "Videos");
-                    window.location.reload();
+                    
                   }}
                 >
                   VIDEOS
@@ -583,7 +583,7 @@ function OtherChannel() {
                   }
                   onClick={() => {
                     localStorage.setItem("Section", "Playlists");
-                    window.location.reload();
+                    
                   }}
                 >
                   PLAYLISTS
@@ -597,7 +597,7 @@ function OtherChannel() {
                   }
                   onClick={() => {
                     localStorage.setItem("Section", "Playlists");
-                    window.location.reload();
+                    
                   }}
                 >
                   PLAYLISTS
@@ -610,7 +610,7 @@ function OtherChannel() {
                   }
                   onClick={() => {
                     localStorage.setItem("Section", "Subscriptions");
-                    window.location.reload();
+                    
                   }}
                 >
                   CHANNELS
@@ -624,7 +624,7 @@ function OtherChannel() {
                   }
                   onClick={() => {
                     localStorage.setItem("Section", "Subscriptions");
-                    window.location.reload();
+                    
                   }}
                 >
                   CHANNELS
@@ -635,7 +635,7 @@ function OtherChannel() {
                   className={theme ? "channel-about1" : "channel-about2"}
                   onClick={() => {
                     localStorage.setItem("Section", "About");
-                    window.location.reload();
+                    
                   }}
                 >
                   ABOUT
@@ -647,7 +647,7 @@ function OtherChannel() {
                   }
                   onClick={() => {
                     localStorage.setItem("Section", "About");
-                    window.location.reload();
+                    
                   }}
                 >
                   ABOUT
