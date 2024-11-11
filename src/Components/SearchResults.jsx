@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import LeftPanel from "./LeftPanel";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../Css/search.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Tooltip from "@mui/material/Tooltip";
@@ -18,6 +18,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function SearchResults() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate= useNavigate();
   const { data } = useParams();
   const [myemail, setmyEmail] = useState();
   const [searchedVideoData, setsearchedVideoData] = useState([]);
@@ -424,14 +425,14 @@ function SearchResults() {
                       alt="channelDP"
                       className="channel-img"
                       onClick={() =>
-                        (window.location.href = `/channel/${element._id}`)
+                        (navigate(`/channel/${element._id}`))
                       }
                     />
                     <div className="channel-flex-data">
                       <div
                         className="channel-extra-content"
                         onClick={() =>
-                          (window.location.href = `/channel/${element._id}`)
+                          (navigate(`/channel/${element._id}`))
                         }
                       >
                         <div className="channel-liner">
@@ -577,10 +578,10 @@ function SearchResults() {
                         if (token) {
                           updateViews(element._id);
                           setTimeout(() => {
-                            window.location.href = `/video/${element._id}`;
+                            navigate(`/video/${element._id}`);
                           }, 400);
                         } else {
-                          window.location.href = `/video/${element._id}`;
+                          navigate(`/video/${element._id}`);
                         }
                       }}
                     >
@@ -1072,10 +1073,10 @@ function SearchResults() {
                       if (token) {
                         updateViews(element._id);
                         setTimeout(() => {
-                          window.location.href = `/video/${element._id}`;
+                          navigate(`/video/${element._id}`);
                         }, 400);
                       } else {
-                        window.location.href = `/video/${element._id}`;
+                        navigate(`/video/${element._id}`);
                       }
                     }}
                   >
@@ -1558,14 +1559,14 @@ function SearchResults() {
                       alt="channelDP"
                       className="channel-img"
                       onClick={() =>
-                        (window.location.href = `/channel/${element._id}`)
+                        (navigate(`/channel/${element._id}`))
                       }
                     />
                     <div className="channel-flex-data">
                       <div
                         className="channel-extra-content"
                         onClick={() =>
-                          (window.location.href = `/channel/${element._id}`)
+                          (navigate(`/channel/${element._id}`))
                         }
                       >
                         <div className="channel-liner">
@@ -1707,10 +1708,10 @@ function SearchResults() {
                       if (token) {
                         updateViews(element._id);
                         setTimeout(() => {
-                          window.location.href = `/video/${element._id}`;
+                          navigate(`/video/${element._id}`);
                         }, 400);
                       } else {
-                        window.location.href = `/video/${element._id}`;
+                        navigate(`/video/${element._id}`);
                       }
                     }}
                   >

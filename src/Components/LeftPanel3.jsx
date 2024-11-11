@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../Css/leftpanel3.css";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import WestIcon from "@mui/icons-material/West";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Tooltip from "@mui/material/Tooltip";
@@ -12,6 +12,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 function LeftPanel2() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate();
   const { id } = useParams();
   const [videodata, setVideoData] = useState();
   const VideoEditSection = localStorage.getItem("Video-Edit Section");
@@ -114,9 +115,9 @@ function LeftPanel2() {
           }
           onClick={() => {
             if (window.location.href.includes(`/studio/video/edit/${id}`)) {
-              window.location.href = "/studio/video";
+              navigate("/studio/video");
             } else {
-              window.location.href = "/studio/comments";
+              navigate("/studio/comments");
             }
           }}
         >
@@ -162,7 +163,7 @@ function LeftPanel2() {
             className="redirect-video"
             onClick={() => {
               if (videodata) {
-                window.location.href = `/video/${videodata._id}`;
+                navigate(`/video/${videodata._id}`);
               }
             }}
           >
@@ -222,7 +223,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Video-Edit Section", "Details");
-              window.location.href = `/studio/video/edit/${id}`;
+              navigate(`/studio/video/edit/${id}`);
             }}
           >
             <ModeEditOutlineOutlinedIcon
@@ -244,7 +245,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Video-Edit Section", "Video-Comments");
-              window.location.href = `/studio/video/comments/${id}`;
+              navigate(`/studio/video/comments/${id}`);
             }}
           >
             <ChatOutlinedIcon
@@ -279,9 +280,9 @@ function LeftPanel2() {
           }
           onClick={() => {
             if (window.location.href.includes(`/studio/video/edit/${id}`)) {
-              window.location.href = "/studio/video";
+              navigate("/studio/video");
             } else {
-              window.location.href = "/studio/comments";
+              navigate("/studio/comments");
             }
           }}
         >
@@ -321,7 +322,7 @@ function LeftPanel2() {
             className="redirect-video"
             onClick={() => {
               if (videodata) {
-                window.location.href = `/video/${videodata._id}`;
+                navigate(`/video/${videodata._id}`);
               }
             }}
           >
@@ -355,7 +356,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Video-Edit Section", "Details");
-              window.location.href = `/studio/video/edit/${id}`;
+              navigate(`/studio/video/edit/${id}`);
             }}
           >
             <ModeEditOutlineOutlinedIcon
@@ -381,7 +382,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Video-Edit Section", "Video-Comments");
-              window.location.href = `/studio/video/comments/${id}`;
+              navigate(`/studio/video/comments/${id}`);
             }}
           >
             <ChatOutlinedIcon
@@ -415,9 +416,9 @@ function LeftPanel2() {
           }
           onClick={() => {
             if (window.location.href.includes(`/studio/video/edit/${id}`)) {
-              window.location.href = "/studio/video";
+              navigate("/studio/video");
             } else {
-              window.location.href = "/studio/comments";
+              navigate("/studio/comments");
             }
           }}
         >
@@ -454,7 +455,7 @@ function LeftPanel2() {
             className="redirect-video"
             onClick={() => {
               if (videodata) {
-                window.location.href = `/video/${videodata._id}`;
+                navigate(`/video/${videodata._id}`);
               }
             }}
           >
@@ -488,7 +489,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Video-Edit Section", "Details");
-              window.location.href = `/studio/video/edit/${id}`;
+              navigate(`/studio/video/edit/${id}`);
             }}
           >
             <ModeEditOutlineOutlinedIcon
@@ -514,7 +515,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Video-Edit Section", "Video-Comments");
-              window.location.href = `/studio/video/comments/${id}`;
+              navigate(`/studio/video/comments/${id}`);
             }}
           >
             <ChatOutlinedIcon

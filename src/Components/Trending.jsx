@@ -9,9 +9,11 @@ import Zoom from "@mui/material/Zoom";
 import nothing from "../img/nothing.png";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useNavigate } from "react-router-dom";
 
 function Trending() {
   const backendURL = "https://backend-k9bc.onrender.com";
+  const navigate = useNavigate();
   const [trendingVideos, setTrendingVideos] = useState([]);
   const [menuClicked, setMenuClicked] = useState(() => {
     const menu = localStorage.getItem("menuClicked");
@@ -216,10 +218,10 @@ function Trending() {
                         if (token) {
                           updateViews(element.videoid);
                           setTimeout(() => {
-                            window.location.href = `/video/${element.videoid}`;
+                            navigate(`/video/${element.videoid}`);
                           }, 400);
                         } else {
-                          window.location.href = `/video/${element.videoid}`;
+                          navigate(`/video/${element.videoid}`);
                         }
                       }}
                       style={

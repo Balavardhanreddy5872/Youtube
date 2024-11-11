@@ -5,7 +5,7 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import VideoLibraryOutlinedIcon from "@mui/icons-material/VideoLibraryOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import AutoFixHighOutlinedIcon from "@mui/icons-material/AutoFixHighOutlined";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import avatar from "../img/avatar.png";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -22,6 +22,7 @@ import { MdOutlineAutoFixHigh } from "react-icons/md";
 
 function LeftPanel2() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const token = localStorage.getItem("userToken");
   const [profileIMG, setProfileIMG] = useState();
@@ -190,7 +191,7 @@ function LeftPanel2() {
               className="profile_img"
               onClick={() => {
                 if (channelId !== undefined) {
-                  window.location.href = `/channel/${channelId}`;
+                  navigate(`/channel/${channelId}`);
                 }
               }}
             />
@@ -214,7 +215,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Dashboard");
-              window.location.href = "/studio";
+              navigate("/studio");
             }}
           >
             <DashboardIcon
@@ -236,7 +237,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Content");
-              window.location.href = "/studio/video";
+              navigate("/studio/video");
             }}
           >
             <VideoLibraryOutlinedIcon
@@ -258,7 +259,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Comments");
-              window.location.href = "/studio/comments";
+              navigate("/studio/comments");
             }}
           >
             <ChatOutlinedIcon
@@ -280,7 +281,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Customization");
-              window.location.href = "/studio/customize";
+              navigate("/studio/customize");
             }}
           >
             <AutoFixHighOutlinedIcon
@@ -347,7 +348,7 @@ function LeftPanel2() {
               style={{ width: "50px", height: "50px" }}
               onClick={() => {
                 if (channelId !== undefined) {
-                  window.location.href = `/channel/${channelId}`;
+                  navigate(`/channel/${channelId}`);
                 }
               }}
             />
@@ -365,7 +366,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Dashboard");
-              window.location.href = "/studio";
+              navigate("/studio");
             }}
           >
             <Tooltip
@@ -397,7 +398,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Content");
-              window.location.href = "/studio/video";
+              navigate("/studio/video");
             }}
           >
             <Tooltip
@@ -428,7 +429,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Comments");
-              window.location.href = "/studio/comments";
+              navigate("/studio/comments");
             }}
           >
             <Tooltip
@@ -459,7 +460,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Customization");
-              window.location.href = "/studio/customize";
+              navigate("/studio/customize");
             }}
           >
             <Tooltip
@@ -530,7 +531,7 @@ function LeftPanel2() {
               style={{ width: "50px", height: "50px" }}
               onClick={() => {
                 if (channelId !== undefined) {
-                  window.location.href = `/channel/${channelId}`;
+                  navigate(`/channel/${channelId}`);
                 }
               }}
             />
@@ -548,7 +549,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Dashboard");
-              window.location.href = "/studio";
+              navigate("/studio");
             }}
           >
             <Tooltip
@@ -580,7 +581,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Content");
-              window.location.href = "/studio/video";
+              navigate("/studio/video");
             }}
           >
             <Tooltip
@@ -611,7 +612,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Comments");
-              window.location.href = "/studio/comments";
+              navigate("/studio/comments");
             }}
           >
             <Tooltip
@@ -642,7 +643,7 @@ function LeftPanel2() {
             }
             onClick={() => {
               localStorage.setItem("Studio-Section", "Customization");
-              window.location.href = "/studio/customize";
+              navigate("/studio/customize");
             }}
           >
             <Tooltip
@@ -681,7 +682,7 @@ function LeftPanel2() {
           className="hori-dashboard"
           onClick={() => {
             localStorage.setItem("Studio-Section", "Dashboard");
-            window.location.href = "/studio";
+            navigate("/studio");
           }}
         >
           <Tooltip
@@ -706,7 +707,7 @@ function LeftPanel2() {
           className="hori-content"
           onClick={() => {
             localStorage.setItem("Studio-Section", "Content");
-            window.location.href = "/studio/video";
+            navigate("/studio/video");
           }}
         >
           <Tooltip
@@ -729,7 +730,7 @@ function LeftPanel2() {
           className="hori-comments"
           onClick={() => {
             localStorage.setItem("Studio-Section", "Comments");
-            window.location.href = "/studio/comments";
+            navigate("/studio/comments");
           }}
         >
           <Tooltip
@@ -754,7 +755,7 @@ function LeftPanel2() {
           className="hori-customize"
           onClick={() => {
             localStorage.setItem("Studio-Section", "Customization");
-            window.location.href = "/studio/customize";
+            navigate("/studio/customize");
           }}
         >
           <Tooltip

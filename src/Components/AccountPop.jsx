@@ -12,9 +12,11 @@ import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import {SiYoutubestudio} from "react-icons/si"
+import { useNavigate } from "react-router-dom";
 
 function AccountPop() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [profile, setProfile] = useState("");
@@ -138,9 +140,9 @@ function AccountPop() {
             className={theme ? "yourchannel c-sec" : "yourchannel c-sec2"}
             onClick={() => {
               if (isChannel === true) {
-                window.location.href = `/channel/${ChannelID}`;
+                navigate(`/channel/${ChannelID}`);
               } else {
-                window.location.href = `/studio`;
+                navigate(`/studio`);
               }
             }}
           >
@@ -153,7 +155,7 @@ function AccountPop() {
           <div
             className={theme ? "yourstudio c-sec" : "yourstudio c-sec2"}
             onClick={() => {
-              window.location.href = "/studio";
+              navigate("/studio");
             }}
           >
             <SiYoutubestudio
@@ -197,7 +199,7 @@ function AccountPop() {
             className={theme ? "exitout c-sec" : "exitout c-sec2"}
             onClick={() => {
               localStorage.removeItem("userToken");
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             <LogoutOutlinedIcon

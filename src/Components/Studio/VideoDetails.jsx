@@ -1,6 +1,6 @@
 import LeftPanel3 from "../LeftPanel3";
 import Navbar2 from "../Navbar2";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import "../../Css/Studio/videodetails.css";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -21,6 +21,7 @@ import { GrUndo } from "react-icons/gr";
 
 function VideoDetails() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate()
   const { id } = useParams();
   const [videodata, setVideoData] = useState();
   const [previewTitle, setPreviewTitle] = useState("");
@@ -330,7 +331,7 @@ function VideoDetails() {
 
       <div
         className="back-menu-edit"
-        onClick={() => (window.location.href = "/studio/video")}
+        onClick={() => (navigate( "/studio/video"))}
       >
         <WestIcon fontSize="medium" style={{ color: "#aaa" }} />
       </div>
@@ -659,7 +660,7 @@ function VideoDetails() {
                       className="current-videolink"
                       onClick={() => {
                         if (videodata) {
-                          window.location.href = `${videolink}/${videodata._id}`;
+                          navigate( `${videolink}/${videodata._id}`);
                         }
                       }}
                     >

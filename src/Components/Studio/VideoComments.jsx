@@ -13,12 +13,13 @@ import Tooltip from "@mui/material/Tooltip";
 import WestIcon from "@mui/icons-material/West";
 import Zoom from "@mui/material/Zoom";
 import noImage from "../../img/no-comment.png";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 function VideoComments() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate()
   const { id } = useParams();
   const [Email, setEmail] = useState();
   const [videoComments, setVideoComments] = useState([]);
@@ -235,7 +236,7 @@ function VideoComments() {
       <LeftPanel3 />
       <div
         className="back-menu-edit"
-        onClick={() => (window.location.href = "/studio/comments")}
+        onClick={() => (navigate( "/studio/comments"))}
       >
         <WestIcon fontSize="medium" style={{ color: "#aaa" }} />
       </div>

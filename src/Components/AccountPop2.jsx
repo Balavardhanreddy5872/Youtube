@@ -12,9 +12,11 @@ import DoneOutlinedIcon from "@mui/icons-material/DoneOutlined";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { useNavigate } from "react-router-dom";
 
 function AccountPop() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate =  useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [profile, setProfile] = useState("");
@@ -116,7 +118,7 @@ function AccountPop() {
               theme ? "yourchannel c-sec" : "yourchannel c-sec preview-lightt"
             }
             onClick={() => {
-              window.location.href = `/channel/${ChannelID}`;
+              navigate(`/channel/${ChannelID}`);
             }}
           >
             <AccountBoxOutlinedIcon
@@ -130,7 +132,7 @@ function AccountPop() {
               theme ? "yourstudio c-sec" : "yourstudio c-sec preview-lightt"
             }
             onClick={() => {
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             <YouTubeIcon
@@ -180,7 +182,7 @@ function AccountPop() {
             className={theme ? "exitout c-sec" : "exitout c-sec preview-lightt"}
             onClick={() => {
               localStorage.removeItem("userToken");
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             <LogoutOutlinedIcon

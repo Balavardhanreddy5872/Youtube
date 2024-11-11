@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import LeftPanel from "./LeftPanel";
 import { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
@@ -26,6 +26,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Playlists() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate();
   const { id } = useParams();
   const [menuClicked, setMenuClicked] = useState(() => {
     const menu = localStorage.getItem("menuClicked");
@@ -419,10 +420,10 @@ function Playlists() {
                       if (token) {
                         updateViews(playlistsVideos[0].videoID);
                         setTimeout(() => {
-                          window.location.href = `/video/${playlistsVideos[0].videoID}`;
+                          navigate(`/video/${playlistsVideos[0].videoID}`);
                         }, 400);
                       } else {
-                        window.location.href = `/video/${playlistsVideos[0].videoID}`;
+                        navigate(`/video/${playlistsVideos[0].videoID}`);
                       }
                     }}
                   >
@@ -545,7 +546,7 @@ function Playlists() {
                     <p
                       className="like-username"
                       onClick={() =>
-                        (window.location.href = `/channel/${channelID}`)
+                        (navigate(`/channel/${channelID}`))
                       }
                     >
                       {playlistDetails.playlist_owner}
@@ -739,10 +740,10 @@ function Playlists() {
                     if (token) {
                       updateViews(playlistsVideos[0].videoID);
                       setTimeout(() => {
-                        window.location.href = `/video/${playlistsVideos[0].videoID}`;
+                        navigate(`/video/${playlistsVideos[0].videoID}`);
                       }, 400);
                     } else {
-                      window.location.href = `/video/${playlistsVideos[0].videoID}`;
+                      navigate(`/video/${playlistsVideos[0].videoID}`);
                     }
                   }}
                 >
@@ -845,10 +846,10 @@ function Playlists() {
                             if (token) {
                               updateViews(element.videoID);
                               setTimeout(() => {
-                                window.location.href = `/video/${element.videoID}`;
+                                navigate(`/video/${element.videoID}`);
                               }, 400);
                             } else {
-                              window.location.href = `/video/${element.videoID}`;
+                              navigate(`/video/${element.videoID}`);
                             }
                           }}
                         >
@@ -930,10 +931,10 @@ function Playlists() {
                         if (token) {
                           updateViews(playlistsVideos[0].videoID);
                           setTimeout(() => {
-                            window.location.href = `/video/${playlistsVideos[0].videoID}`;
+                            navigate(`/video/${playlistsVideos[0].videoID}`);
                           }, 400);
                         } else {
-                          window.location.href = `/video/${playlistsVideos[0].videoID}`;
+                          navigate(`/video/${playlistsVideos[0].videoID}`);
                         }
                       }}
                     >
@@ -1056,7 +1057,7 @@ function Playlists() {
                       <p
                         className="like-username"
                         onClick={() =>
-                          (window.location.href = `/channel/${channelID}`)
+                          (navigate(`/channel/${channelID}`))
                         }
                       >
                         {playlistDetails.playlist_owner}
@@ -1252,10 +1253,10 @@ function Playlists() {
                     if (token) {
                       updateViews(playlistsVideos[0].videoID);
                       setTimeout(() => {
-                        window.location.href = `/video/${playlistsVideos[0].videoID}`;
+                        navigate(`/video/${playlistsVideos[0].videoID}`);
                       }, 400);
                     } else {
-                      window.location.href = `/video/${playlistsVideos[0].videoID}`;
+                      navigate(`/video/${playlistsVideos[0].videoID}`);
                     }
                   }}
                 >
@@ -1358,10 +1359,10 @@ function Playlists() {
                             if (token) {
                               updateViews(element.videoID);
                               setTimeout(() => {
-                                window.location.href = `/video/${element.videoID}`;
+                                navigate(`/video/${element.videoID}`);
                               }, 400);
                             } else {
-                              window.location.href = `/video/${element.videoID}`;
+                              navigate(`/video/${element.videoID}`);
                             }
                           }}
                         >
@@ -1531,7 +1532,7 @@ function Playlists() {
             onClick={() => {
               DeletePlaylist();
               setTimeout(() => {
-                window.location.href = "/";
+                navigate("/");
               }, 400);
             }}
           >

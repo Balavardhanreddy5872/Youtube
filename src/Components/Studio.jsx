@@ -30,9 +30,11 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LanguageIcon from "@mui/icons-material/Language";
+import { useNavigate } from "react-router-dom";
 
 function Studio() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate =useNavigate();
   const [email, setEmail] = useState("");
   const [isChannel, setisChannel] = useState();
   const [selectedImage, setSelectedImage] = useState(null);
@@ -639,7 +641,7 @@ function Studio() {
             className={theme ? "close-channel" : "close-channel-light"}
             style={{ color: theme ? "rgb(170 170 170 / 50%)" : "#606060" }}
             onClick={() => {
-              window.location.href = "/";
+              navigate("/");
             }}
           />
           <p className="channel-head">Create Your Channel</p>

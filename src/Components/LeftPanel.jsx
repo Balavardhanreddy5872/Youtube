@@ -15,7 +15,7 @@ import Logo from "../img/logo1.png";
 import Logo2 from "../img/logo2.png";
 import Signup from "./Signup";
 import Signin from "./Signin";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import CodeIcon from "@mui/icons-material/Code";
@@ -38,6 +38,7 @@ import { MdVideoLibrary } from "react-icons/md";
 
 function LeftPanel() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate();
   const [menuClicked, setMenuClicked] = useState(() => {
     const menu = localStorage.getItem("menuClicked");
     return menu ? JSON.parse(menu) : false;
@@ -218,7 +219,7 @@ function LeftPanel() {
             }
             onClick={() => {
               localStorage.setItem("selected", "home");
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             {selected === "home" ? (
@@ -243,7 +244,7 @@ function LeftPanel() {
             }
             onClick={() => {
               localStorage.setItem("selected", "trending");
-              window.location.href = "/trending";
+              navigate("/trending");
             }}
           >
             {selected === "trending" ? (
@@ -270,7 +271,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "subscription");
-                window.location.href = "/subscriptions";
+                navigate("/subscriptions");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -338,7 +339,7 @@ function LeftPanel() {
                       className="mysubscriptions"
                       key={index}
                       onClick={() => {
-                        window.location.href = `/channel/${element.channelID}`;
+                        navigate(`/channel/${element.channelID}`);
                       }}
                       style={
                         loading === false
@@ -379,7 +380,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "library");
-                window.location.href = "/library";
+                navigate("/library");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -411,7 +412,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "watch-later");
-                window.location.href = "/watchlater";
+                navigate("/watchlater");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -443,7 +444,7 @@ function LeftPanel() {
               if (token) {
                 localStorage.setItem("selected", "liked-video");
 
-                window.location.href = "/likedVideos";
+                navigate("/likedVideos");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -473,7 +474,7 @@ function LeftPanel() {
                     className="my-playlist-data"
                     key={index}
                     onClick={() => {
-                      window.location.href = `/playlist/${element._id}`;
+                      navigate(`/playlist/${element._id}`);
                     }}
                   >
                     <PlaylistPlayOutlinedIcon
@@ -502,7 +503,7 @@ function LeftPanel() {
                     className="my-playlist-data"
                     key={index}
                     onClick={() => {
-                      window.location.href = `/playlist/${element._id}`;
+                      navigate(`/playlist/${element._id}`);
                     }}
                   >
                     <PlaylistPlayOutlinedIcon
@@ -549,7 +550,7 @@ function LeftPanel() {
             onClick={() => {
               localStorage.setItem("selected", "home");
 
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             {selected === "home" ? (
@@ -575,7 +576,7 @@ function LeftPanel() {
             onClick={() => {
               localStorage.setItem("selected", "trending");
 
-              window.location.href = "/trending";
+              navigate("/trending");
             }}
           >
             {selected === "trending" ? (
@@ -601,7 +602,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "subscription");
-                window.location.href = "/subscriptions";
+                navigate("/subscriptions");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -634,7 +635,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "library");
-                window.location.href = "/library";
+                navigate("/library");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -664,7 +665,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "watch-later");
-                window.location.href = "/watchlater";
+                navigate("/watchlater");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -695,7 +696,7 @@ function LeftPanel() {
               if (token) {
                 localStorage.setItem("selected", "liked-video");
 
-                window.location.href = "/likedVideos";
+                navigate("/likedVideos");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -738,7 +739,7 @@ function LeftPanel() {
             onClick={() => {
               localStorage.setItem("selected", "home");
 
-              window.location.href = "/";
+              navigate( "/");
             }}
           >
             {selected === "home" ? (
@@ -764,7 +765,7 @@ function LeftPanel() {
             onClick={() => {
               localStorage.setItem("selected", "trending");
 
-              window.location.href = "/trending";
+              navigate("/trending");
             }}
           >
             {selected === "trending" ? (
@@ -790,7 +791,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "subscription");
-                window.location.href = "/subscriptions";
+                navigate("/subscriptions");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -823,7 +824,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "library");
-                window.location.href = "/library";
+                navigate("/library");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -853,7 +854,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "watch-later");
-                window.location.href = "/watchlater";
+                navigate("/watchlater");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -884,7 +885,7 @@ function LeftPanel() {
               if (token) {
                 localStorage.setItem("selected", "liked-video");
 
-                window.location.href = "/likedVideos";
+                navigate("/likedVideos");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -1006,7 +1007,7 @@ function LeftPanel() {
             style={{ marginLeft: "5px" }}
             className="youtubeLogo"
             onClick={() => {
-              window.location.href = "/";
+              navigate("/");
             }}
           />
         </div>
@@ -1024,7 +1025,7 @@ function LeftPanel() {
               }
               onClick={() => {
                 localStorage.setItem("selected", "home");
-                window.location.href = "/";
+                navigate("/");
               }}
             >
               {selected === "home" ? (
@@ -1048,7 +1049,7 @@ function LeftPanel() {
               }
               onClick={() => {
                 localStorage.setItem("selected", "trending");
-                window.location.href = "/trending";
+                navigate("/trending");
               }}
             >
               {selected === "trending" ? (
@@ -1075,7 +1076,7 @@ function LeftPanel() {
               onClick={() => {
                 if (token) {
                   localStorage.setItem("selected", "subscription");
-                  window.location.href = "/subscriptions";
+                  navigate("/subscriptions");
                 } else {
                   setisbtnClicked(true);
                   document.body.classList.add("bg-css");
@@ -1143,7 +1144,7 @@ function LeftPanel() {
                         className="mysubscriptions"
                         key={index}
                         onClick={() => {
-                          window.location.href = `/channel/${element.channelID}`;
+                          navigate(`/channel/${element.channelID}`);
                         }}
                         style={
                           loading === false
@@ -1184,7 +1185,7 @@ function LeftPanel() {
               onClick={() => {
                 if (token) {
                   localStorage.setItem("selected", "library");
-                  window.location.href = "/library";
+                  navigate("/library");
                 } else {
                   setisbtnClicked(true);
                   document.body.classList.add("bg-css");
@@ -1216,7 +1217,7 @@ function LeftPanel() {
               onClick={() => {
                 if (token) {
                   localStorage.setItem("selected", "watch-later");
-                  window.location.href = "/watchlater";
+                  navigate("/watchlater");
                 } else {
                   setisbtnClicked(true);
                   document.body.classList.add("bg-css");
@@ -1248,7 +1249,7 @@ function LeftPanel() {
                 if (token) {
                   localStorage.setItem("selected", "liked-video");
 
-                  window.location.href = "/likedVideos";
+                  navigate("/likedVideos");
                 } else {
                   setisbtnClicked(true);
                   document.body.classList.add("bg-css");
@@ -1278,7 +1279,7 @@ function LeftPanel() {
                       className="my-playlist-data"
                       key={index}
                       onClick={() => {
-                        window.location.href = `/playlist/${element._id}`;
+                        navigate(`/playlist/${element._id}`);
                       }}
                     >
                       <PlaylistPlayOutlinedIcon
@@ -1307,7 +1308,7 @@ function LeftPanel() {
                       className="my-playlist-data"
                       key={index}
                       onClick={() => {
-                        window.location.href = `/playlist/${element._id}`;
+                        navigate(`/playlist/${element._id}`);
                       }}
                     >
                       <PlaylistPlayOutlinedIcon
@@ -1346,7 +1347,7 @@ function LeftPanel() {
             }
             onClick={() => {
               localStorage.setItem("selected", "home");
-              window.location.href = "/";
+              navigate("/");
             }}
           >
             {selected === "home" ? (
@@ -1373,7 +1374,7 @@ function LeftPanel() {
             }
             onClick={() => {
               localStorage.setItem("selected", "trending");
-              window.location.href = "/trending";
+              navigate("/trending");
             }}
           >
             {selected === "trending" ? (
@@ -1397,7 +1398,7 @@ function LeftPanel() {
             className="addvid-icon"
             onClick={() => {
               if (token) {
-                (window.location.href = "/studio")
+                (navigate("/studio"))
               }
               else{
                 setisbtnClicked(true);
@@ -1414,7 +1415,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "subscription");
-                window.location.href = "/subscriptions";
+                navigate("/subscriptions");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");
@@ -1443,7 +1444,7 @@ function LeftPanel() {
             onClick={() => {
               if (token) {
                 localStorage.setItem("selected", "library");
-                window.location.href = "/library";
+                navigate("/library");
               } else {
                 setisbtnClicked(true);
                 document.body.classList.add("bg-css");

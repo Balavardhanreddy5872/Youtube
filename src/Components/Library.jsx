@@ -15,6 +15,7 @@ import deleteIMG from "../img/delete.jpg";
 import "../Css/library.css";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useNavigate } from "react-router-dom";
 
 function generateRandomColors(count) {
   const transparency = 0.65; // Adjust transparency as needed (0 to 1)
@@ -32,6 +33,7 @@ function generateRandomColors(count) {
 
 function Library() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate();
   const [watchlater, setWatchLater] = useState([]);
   const [PlaylistData, setPlaylistData] = useState([]);
   const [playlistColors, setPlaylistColors] = useState([]);
@@ -350,7 +352,7 @@ function Library() {
                 fontSize="medium"
                 style={{ color: theme ? "white" : "black" }}
               />
-              <p onClick={() => (window.location.href = "/watchlater")}>
+              <p onClick={() => (navigate("/watchlater"))}>
                 Watch later
               </p>
               <p>{watchlater && watchlater.length}</p>
@@ -359,7 +361,7 @@ function Library() {
               <p
                 className="see-all"
                 onClick={() => {
-                  window.location.href = `/watchlater`;
+                  navigate(`/watchlater`);
                 }}
               >
                 See all
@@ -382,7 +384,7 @@ function Library() {
                     className="thiswatchlater-videoss"
                     key={index}
                     onClick={() => {
-                      window.location.href = (`/video/${element.savedVideoID}`);
+                      navigate((`/video/${element.savedVideoID}`));
                     }}
                   >
                     <img
@@ -612,7 +614,7 @@ function Library() {
                 className="see-all"
                 onClick={() => {
                   localStorage.setItem("Section", "Playlists");
-                  window.location.href = `/channel/${channelID}`;
+                  navigate(`/channel/${channelID}`);
                 }}
               >
                 See all
@@ -642,7 +644,7 @@ function Library() {
                           alt=""
                           className="playlist-thumbnail"
                           onClick={() => {
-                            window.location.href = `/video/${element.playlist_videos[0].videoID}`;
+                            navigate(`/video/${element.playlist_videos[0].videoID}`);
                           }}
                         />
                       </div>
@@ -651,7 +653,7 @@ function Library() {
                         className="playlist-element"
                         style={{ backgroundColor }}
                         onClick={() => {
-                          window.location.href = `/video/${element.playlist_videos[0].videoID}`;
+                          navigate(`/video/${element.playlist_videos[0].videoID}`);
                         }}
                       >
                         <PlaylistPlayIcon
@@ -722,7 +724,7 @@ function Library() {
                         </div>
                         <p
                           onClick={() =>
-                            (window.location.href = `/playlist/${element._id}`)
+                            (navigate(`/playlist/${element._id}`))
                           }
                           className={theme ? "view-playlist" : "view-playlist2"}
                         >
@@ -765,7 +767,7 @@ function Library() {
                           alt=""
                           className="playlist-thumbnail"
                           onClick={() => {
-                            window.location.href = `/video/${element.playlist_videos[0].videoID}`;
+                            navigate(`/video/${element.playlist_videos[0].videoID}`);
                           }}
                         />
                       </div>
@@ -774,7 +776,7 @@ function Library() {
                         className="playlist-element"
                         style={{ backgroundColor }}
                         onClick={() => {
-                          window.location.href = `/video/${element.playlist_videos[0].videoID}`;
+                          navigate(`/video/${element.playlist_videos[0].videoID}`);
                         }}
                       >
                         <PlaylistPlayIcon
@@ -844,7 +846,7 @@ function Library() {
                         </div>
                         <p
                           onClick={() =>
-                            (window.location.href = `/playlist/${element._id}`)
+                            (navigate(`/playlist/${element._id}`))
                           }
                           className={theme ? "view-playlist" : "view-playlist2"}
                         >
@@ -933,7 +935,7 @@ function Library() {
                 fontSize="medium"
                 style={{ color: theme ? "white" : "black" }}
               />
-              <p onClick={() => (window.location.href = "/likedVideos")}>
+              <p onClick={() => (navigate("/likedVideos"))}>
                 Liked videos
               </p>
               <p>{videolike && videolike.length}</p>
@@ -942,7 +944,7 @@ function Library() {
               <p
                 className="see-all"
                 onClick={() => {
-                  window.location.href = `/likedVideos`;
+                  navigate(`/likedVideos`);
                 }}
               >
                 See all
@@ -959,7 +961,7 @@ function Library() {
                     className="thiswatchlater-videoss"
                     key={index}
                     onClick={() => {
-                      window.location.href = `/video/${element.likedVideoID}`;
+                      navigate(`/video/${element.likedVideoID}`);
                     }}
                   >
                     <img

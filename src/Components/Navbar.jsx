@@ -12,7 +12,7 @@ import { useEffect, useState, useRef } from "react";
 import Signup from "./Signup";
 import Signin from "./Signin";
 import avatar from "../img/avatar.png";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import Tooltip from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
@@ -23,6 +23,7 @@ import { AiOutlineVideoCameraAdd } from "react-icons/ai";
 
 function Navbar() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate = useNavigate();
   const { data } = useParams();
   const [data2, setData] = useState(data);
   const [isbtnClicked, setisbtnClicked] = useState(false);
@@ -99,7 +100,7 @@ function Navbar() {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && searchedData) {
-      window.location.href = `/results/${searchedData}`;
+      navigate(`/results/${searchedData}`);
     }
   };
 
@@ -118,7 +119,7 @@ function Navbar() {
             loading="lazy"
             className="youtubeLogo"
             onClick={() => {
-              window.location.href = "/";
+              window.location.href = '/';
             }}
           />
         </div>
@@ -138,7 +139,7 @@ function Navbar() {
               style={{ color: theme ? "rgb(160, 160, 160)" : "black" }}
               onClick={() => {
                 if (searchedData) {
-                  window.location.href = `/results/${searchedData}`;
+                  navigate(`/results/${searchedData}`);
                 }
               }}
             />

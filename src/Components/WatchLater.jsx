@@ -7,9 +7,11 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import "../Css/likevideos.css";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useNavigate } from "react-router-dom";
 
 function WatchLater() {
   const backendURL = "https://backend-k9bc.onrender.com";
+  const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [name, setName] = useState();
   const [menuClicked, setMenuClicked] = useState(() => {
@@ -167,10 +169,10 @@ function WatchLater() {
                       if (token) {
                         updateViews(watchlater[0].savedVideoID);
                         setTimeout(() => {
-                          window.location.href = `/video/${watchlater[0].savedVideoID}`;
+                          navigate(`/video/${watchlater[0].savedVideoID}`);
                         }, 400);
                       } else {
-                        window.location.href = `/video/${watchlater[0].savedVideoID}`;
+                        navigate(`/video/${watchlater[0].savedVideoID}`);
                       }
                     }}
                   >
@@ -229,10 +231,10 @@ function WatchLater() {
                     if (token) {
                       updateViews(watchlater[0].savedVideoID);
                       setTimeout(() => {
-                        window.location.href = `/video/${watchlater[0].savedVideoID}`;
+                        navigate(`/video/${watchlater[0].savedVideoID}`);
                       }, 400);
                     } else {
-                      window.location.href = `/video/${watchlater[0].savedVideoID}`;
+                      navigate(`/video/${watchlater[0].savedVideoID}`);
                     }
                   }}
                 >
@@ -335,10 +337,10 @@ function WatchLater() {
                             if (token) {
                               updateViews(element.savedVideoID);
                               setTimeout(() => {
-                                window.location.href = `/video/${element.savedVideoID}`;
+                                navigate(`/video/${element.savedVideoID}`);
                               }, 400);
                             } else {
-                              window.location.href = `/video/${element.savedVideoID}`;
+                              navigate(`/video/${element.savedVideoID}`);
                             }
                           }}
                         >
@@ -418,10 +420,10 @@ function WatchLater() {
                         if (token) {
                           updateViews(watchlater[0].savedVideoID);
                           setTimeout(() => {
-                            window.location.href = `/video/${watchlater[0].savedVideoID}`;
+                            navigate(`/video/${watchlater[0].savedVideoID}`);
                           }, 400);
                         } else {
-                          window.location.href = `/video/${watchlater[0].savedVideoID}`;
+                          navigate(`/video/${watchlater[0].savedVideoID}`);
                         }
                       }}
                     >
@@ -481,10 +483,10 @@ function WatchLater() {
                     if (token) {
                       updateViews(watchlater[0].savedVideoID);
                       setTimeout(() => {
-                        window.location.href = `/video/${watchlater[0].savedVideoID}`;
+                        navigate(`/video/${watchlater[0].savedVideoID}`);
                       }, 400);
                     } else {
-                      window.location.href = `/video/${watchlater[0].savedVideoID}`;
+                      navigate(`/video/${watchlater[0].savedVideoID}`);
                     }
                   }}
                 >
@@ -587,10 +589,10 @@ function WatchLater() {
                             if (token) {
                               updateViews(element.savedVideoID);
                               setTimeout(() => {
-                                window.location.href = `/video/${element.savedVideoID}`;
+                                navigate(`/video/${element.savedVideoID}`);
                               }, 400);
                             } else {
-                              window.location.href = `/video/${element.savedVideoID}`;
+                              navigate(`/video/${element.savedVideoID}`);
                             }
                           }}
                         >

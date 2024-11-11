@@ -8,9 +8,11 @@ import "react-loading-skeleton/dist/skeleton.css";
 import LeftPanel from "./LeftPanel";
 import Navbar from "./Navbar";
 import "../Css/theme.css";
+import { useNavigate } from "react-router-dom";
 
 function Browse() {
   const backendURL = "https://backend-k9bc.onrender.com"
+  const navigate =  useNavigate();
   const [thumbnails, setThumbnails] = useState([]);
   const [Titles, setTitles] = useState();
   const [uploader, setUploader] = useState();
@@ -346,10 +348,10 @@ function Browse() {
                         if (token) {
                           updateViews(VideoID[index]);
                           setTimeout(() => {
-                            window.location.href = `/video/${VideoID[index]}`;
+                            navigate(`/video/${VideoID[index]}`);
                           }, 400);
                         }
-                        window.location.href = `/video/${VideoID[index]}`;
+                        navigate(`/video/${VideoID[index]}`);
                       }}
                     >
                       <img
@@ -508,10 +510,10 @@ function Browse() {
                         if (token) {
                           updateViews(element._id);
                           setTimeout(() => {
-                            window.location.href = `/video/${element._id}`;
+                            navigate(`/video/${element._id}`);
                           }, 400);
                         }
-                        window.location.href = `/video/${element._id}`;
+                        navigate(`/video/${element._id}`);
                       }}
                     >
                       <img
